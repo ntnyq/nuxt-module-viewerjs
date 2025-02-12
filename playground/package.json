@@ -1,0 +1,21 @@
+{
+  "name": "playground",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "nuxi build",
+    "dev": "nuxi dev",
+    "generate": "nuxi generate"
+  },
+  "dependencies": {
+    "@unocss/reset": "catalog:"
+  },
+  "devDependencies": {
+    "@nuxt-dev/viewerjs": "workspace:*",
+    "@unocss/nuxt": "catalog:",
+    "nuxt": "catalog:",
+    "unocss": "catalog:",
+    "viewerjs": "catalog:"
+  }
+}
