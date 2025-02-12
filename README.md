@@ -61,7 +61,7 @@ Check [Viewer.js - Options](https://github.com/fengyuanchen/viewerjs#options) fo
 
 ## Credits
 
-- [vuepress/ecosystem - plugin-viewerjs](https://github.com/vuepress/ecosystem/tree/main/plugins/features/plugin-viewerjs)
+- [Viewer.js](https://github.com/fengyuanchen/viewerjs)
 
 ## License
 
