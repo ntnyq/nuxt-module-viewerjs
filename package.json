@@ -2,7 +2,7 @@
   "name": "@nuxt-dev/viewerjs",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@10.3.0",
+  "packageManager": "pnpm@10.8.0",
   "description": "Viewer.js integrated for Nuxt",
   "keywords": [
     "Viewer.js",
@@ -26,21 +26,14 @@
     "url": "https://github.com/ntnyq/nuxt-module-viewerjs/issues"
   },
   "exports": {
+    "./package.json": "./package.json",
     ".": {
-      "import": {
-        "types": "./dist/types.d.mts",
-        "default": "./dist/module.mjs"
-      },
-      "require": {
-        "types": "./dist/types.d.ts",
-        "default": "./dist/module.cjs"
-      }
-    },
-    "./package.json": "./package.json"
+      "types": "./dist/types.d.mts",
+      "default": "./dist/module.mjs"
+    }
   },
-  "main": "./dist/module.cjs",
-  "module": "./dist/module.mjs",
-  "types": "./dist/types.d.ts",
+  "main": "./dist/module.mjs",
+  "types": "./dist/types.d.mts",
   "files": [
     "dist"
   ],
@@ -50,11 +43,10 @@
   "scripts": {
     "build": "nuxt-module-build build",
     "clean": "premove dist .turbo .nuxt",
-    "coverage": "vitest --coverage",
     "deploy": "run-s dev:prepare build play:build",
     "dev": "nuxi dev playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
-    "lint": "eslint .",
+    "lint": "eslint",
     "play:build": "nuxi generate playground",
     "play:dev": "nuxi dev playground",
     "prepare": "husky",
@@ -68,37 +60,30 @@
   },
   "dependencies": {
     "@nuxt/kit": "catalog:",
-    "defu": "^6.1.4",
+    "defu": "catalog:",
     "viewerjs": "catalog:"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^4.0.0-beta.3",
-    "@ntnyq/prettier-config": "^2.0.0-beta.2",
-    "@nuxt/eslint-config": "^1.0.1",
-    "@nuxt/module-builder": "^0.8.4",
+    "@ntnyq/eslint-config": "catalog:",
+    "@ntnyq/prettier-config": "catalog:",
+    "@nuxt/eslint-config": "catalog:",
+    "@nuxt/module-builder": "catalog:",
     "@nuxt/schema": "catalog:",
-    "@types/node": "^22.13.1",
-    "@vitest/coverage-v8": "catalog:",
-    "bumpp": "^10.0.3",
-    "eslint": "^9.20.1",
-    "husky": "^9.1.7",
-    "nano-staged": "^0.8.0",
-    "npm-run-all2": "^7.0.2",
+    "@types/node": "catalog:",
+    "bumpp": "catalog:",
+    "eslint": "catalog:",
+    "husky": "catalog:",
+    "nano-staged": "catalog:",
+    "npm-run-all2": "catalog:",
     "nuxt": "catalog:",
-    "premove": "^4.0.0",
-    "prettier": "^3.5.0",
-    "tsx": "^4.19.2",
-    "typescript": "~5.6.3",
+    "premove": "catalog:",
+    "prettier": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
     "vitest": "catalog:"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "@parcel/watcher"
-    ]
-  },
   "nano-staged": {
-    "*.{js,ts,mjs,cjs,vue,json,md,yml,yaml,svg}": "eslint --fix",
+    "*.{js,ts,mjs,cjs,vue,md,svg,yml,yaml,json}": "eslint --fix",
     "*.{css,scss,html}": "prettier -uw"
   }
 }

@@ -1,3 +1,7 @@
+/**
+ * @file nuxt config
+ */
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-01-12',
   css: ['@unocss/reset/tailwind.css'],
@@ -11,5 +15,8 @@ export default defineNuxtConfig({
   },
   experimental: {
     appManifest: false,
+  },
+  nitro: {
+    preset: 'static',
   },
 })
