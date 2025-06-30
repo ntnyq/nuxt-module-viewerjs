@@ -3,7 +3,7 @@ packages:
   - playground
 catalog:
   '@ntnyq/eslint-config': ^4.3.0
-  '@ntnyq/prettier-config': ^2.2.0
+  '@ntnyq/prettier-config': ^3.0.1
   '@nuxt/eslint-config': ^1.4.1
   '@nuxt/kit': ^3.17.5
   '@nuxt/module-builder': ^1.0.1
