@@ -2,7 +2,7 @@
   "name": "@nuxt-dev/viewerjs",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@10.8.0",
+  "packageManager": "pnpm@10.12.4",
   "description": "Viewer.js integrated for Nuxt",
   "keywords": [
     "Viewer.js",
