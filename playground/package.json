@@ -8,14 +8,12 @@
     "dev": "nuxi dev",
     "generate": "nuxi generate"
   },
-  "dependencies": {
-    "@unocss/reset": "catalog:"
-  },
   "devDependencies": {
     "@nuxt-dev/viewerjs": "workspace:*",
-    "@unocss/nuxt": "catalog:",
-    "nuxt": "catalog:",
-    "unocss": "catalog:",
-    "viewerjs": "catalog:"
+    "@unocss/nuxt": "^66.3.2",
+    "@unocss/reset": "^66.3.2",
+    "nuxt": "^3.17.5",
+    "unocss": "^66.3.2",
+    "viewerjs": "^1.11.7"
   }
 }

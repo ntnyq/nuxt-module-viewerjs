@@ -59,28 +59,28 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/kit": "catalog:",
-    "defu": "catalog:",
-    "viewerjs": "catalog:"
+    "@nuxt/kit": "^3.17.5",
+    "defu": "^6.1.4",
+    "viewerjs": "^1.11.7"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "catalog:",
-    "@ntnyq/prettier-config": "catalog:",
-    "@nuxt/eslint-config": "catalog:",
-    "@nuxt/module-builder": "catalog:",
-    "@nuxt/schema": "catalog:",
-    "@types/node": "catalog:",
-    "bumpp": "catalog:",
-    "eslint": "catalog:",
-    "husky": "catalog:",
-    "nano-staged": "catalog:",
-    "npm-run-all2": "catalog:",
-    "nuxt": "catalog:",
-    "premove": "catalog:",
-    "prettier": "catalog:",
-    "tsx": "catalog:",
-    "typescript": "catalog:",
-    "vitest": "catalog:"
+    "@ntnyq/eslint-config": "^5.0.0",
+    "@ntnyq/prettier-config": "^3.0.1",
+    "@nuxt/eslint-config": "^1.4.1",
+    "@nuxt/module-builder": "^1.0.1",
+    "@nuxt/schema": "^3.17.5",
+    "@types/node": "^24.0.8",
+    "bumpp": "^10.2.0",
+    "eslint": "^9.30.0",
+    "husky": "^9.1.7",
+    "nano-staged": "^0.8.0",
+    "npm-run-all2": "^8.0.4",
+    "nuxt": "^3.17.5",
+    "premove": "^4.0.0",
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
   },
   "nano-staged": {
     "*.{js,ts,mjs,cjs,vue,md,svg,yml,yaml,json}": "eslint --fix",

@@ -8,7 +8,9 @@ export default defineNuxtPlugin({
     const runtimeConfig = useRuntimeConfig()
     const viewerOptions = runtimeConfig.public.viewerjs
 
-    if (!import.meta.client || !viewerOptions) return
+    if (!import.meta.client || !viewerOptions) {
+      return
+    }
 
     const { container, delay, ...restOptions } = viewerOptions
 
@@ -19,11 +21,15 @@ export default defineNuxtPlugin({
         viewer?.destroy()
       }
 
-      if (!viewerOptions) return
+      if (!viewerOptions) {
+        return
+      }
 
       const containerEl = document.querySelector<HTMLElement>(container)
 
-      if (!containerEl) return
+      if (!containerEl) {
+        return
+      }
 
       viewer = new Viewer(containerEl, restOptions)
     }
