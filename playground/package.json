@@ -12,7 +12,7 @@
     "@nuxt-dev/viewerjs": "workspace:*",
     "@unocss/nuxt": "^66.3.3",
     "@unocss/reset": "^66.3.3",
-    "nuxt": "^3.17.6",
+    "nuxt": "^3.17.7",
     "unocss": "^66.3.3",
     "viewerjs": "^1.11.7"
   }
