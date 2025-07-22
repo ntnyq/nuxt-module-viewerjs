@@ -5,7 +5,7 @@
 import {
   defineConfig,
   presetIcons,
-  presetUno,
+  presetWind4,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
@@ -14,7 +14,11 @@ export default defineConfig({
   transformers: [transformerDirectives(), transformerVariantGroup()],
 
   presets: [
-    presetUno(),
+    presetWind4({
+      preflights: {
+        reset: true,
+      },
+    }),
     presetIcons({
       autoInstall: true,
       scale: 1.2,

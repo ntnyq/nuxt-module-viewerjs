@@ -45,12 +45,10 @@ declare module '@nuxt/schema' {
   }
 
   interface NuxtOptions {
-    // @ts-expect-error TS2687
     viewerjs?: ViewerjsOptions
   }
 
   interface PublicRuntimeConfig {
-    // @ts-expect-error TS2687
     viewerjs?: Required<ViewerjsOptions>
   }
 }

@@ -10,6 +10,7 @@
     "nuxt",
     "nuxt-module",
     "nuxt3",
+    "nuxt4",
     "viewerjs"
   ],
   "license": "MIT",
@@ -42,7 +43,6 @@
   },
   "scripts": {
     "build": "nuxt-module-build build",
-    "clean": "premove dist .turbo .nuxt",
     "deploy": "run-s dev:prepare build play:build",
     "dev": "nuxi dev playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
@@ -52,38 +52,32 @@
     "prepare": "husky",
     "prepublishOnly": "pnpm run build",
     "release": "run-s release:check release:version release:publish",
-    "release:check": "run-s lint typecheck test",
-    "release:publish": "pnpm publish --access public",
+    "release:check": "run-s lint typecheck",
+    "release:publish": "pnpm publish",
     "release:version": "bumpp",
-    "test": "vitest",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.17.7",
+    "@nuxt/kit": "^4.0.2",
     "defu": "^6.1.4",
     "viewerjs": "^1.11.7"
   },
   "devDependencies": {
     "@ntnyq/eslint-config": "^5.2.0",
     "@ntnyq/prettier-config": "^3.0.1",
-    "@nuxt/eslint-config": "^1.7.1",
     "@nuxt/module-builder": "^1.0.2",
-    "@nuxt/schema": "^3.17.7",
+    "@nuxt/schema": "^4.0.2",
     "@types/node": "^24.1.0",
     "bumpp": "^10.2.0",
     "eslint": "^9.32.0",
     "husky": "^9.1.7",
     "nano-staged": "^0.8.0",
     "npm-run-all2": "^8.0.4",
-    "nuxt": "^3.17.7",
-    "premove": "^4.0.0",
+    "nuxt": "^4.0.2",
     "prettier": "^3.6.2",
-    "tsx": "^4.20.3",
-    "typescript": "^5.8.3",
-    "vitest": "^3.2.4"
+    "typescript": "^5.8.3"
   },
   "nano-staged": {
-    "*.{js,ts,mjs,cjs,vue,md,svg,yml,yaml,json}": "eslint --fix",
-    "*.{css,scss,html}": "prettier -uw"
+    "*.{js,ts,mjs,cjs,vue,md,svg,yml,yaml,json}": "eslint --fix"
   }
 }
