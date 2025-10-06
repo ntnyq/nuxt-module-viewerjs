@@ -2,7 +2,7 @@
   "name": "@nuxt-dev/viewerjs",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@10.17.0",
+  "packageManager": "pnpm@10.17.1",
   "description": "Viewer.js integrated for Nuxt",
   "keywords": [
     "Viewer.js",
@@ -63,7 +63,7 @@
     "viewerjs": "^1.11.7"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^5.5.0",
+    "@ntnyq/eslint-config": "^5.6.0",
     "@ntnyq/prettier-config": "^3.0.1",
     "@nuxt/module-builder": "^1.0.2",
     "@nuxt/schema": "^4.1.2",
