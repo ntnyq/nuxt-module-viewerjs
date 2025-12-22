@@ -11,7 +11,7 @@
   "devDependencies": {
     "@nuxt-dev/viewerjs": "workspace:*",
     "@unocss/nuxt": "^66.5.10",
-    "nuxt": "^4.2.1",
+    "nuxt": "^4.2.2",
     "unocss": "^66.5.10",
     "viewerjs": "^1.11.7",
     "vue": "^3.5.25"
