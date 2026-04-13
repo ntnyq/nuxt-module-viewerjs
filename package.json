@@ -63,7 +63,7 @@
     "viewerjs": "^1.11.7"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^5.9.0",
+    "@ntnyq/eslint-config": "^6.0.0",
     "@ntnyq/prettier-config": "^3.0.1",
     "@nuxt/module-builder": "^1.0.2",
     "@nuxt/schema": "^4.4.2",
