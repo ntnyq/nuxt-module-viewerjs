@@ -59,11 +59,11 @@
   },
   "dependencies": {
     "@nuxt/kit": "^4.4.2",
-    "defu": "^6.1.6",
+    "defu": "^6.1.7",
     "viewerjs": "^1.11.7"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^6.0.0",
+    "@ntnyq/eslint-config": "^6.0.1",
     "@ntnyq/prettier-config": "^3.0.1",
     "@nuxt/module-builder": "^1.0.2",
     "@nuxt/schema": "^4.4.2",
@@ -74,7 +74,7 @@
     "nano-staged": "^0.9.0",
     "npm-run-all2": "^8.0.4",
     "nuxt": "^4.4.2",
-    "prettier": "^3.8.1",
+    "prettier": "^3.8.2",
     "typescript": "^5.8.3"
   },
   "nano-staged": {
