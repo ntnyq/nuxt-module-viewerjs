@@ -1,7 +1,7 @@
 packages:
   - playground
 overrides:
-  esbuild: ^0.28.0
+  esbuild: ^0.28.1
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - esbuild
