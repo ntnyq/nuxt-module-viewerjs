@@ -1,11 +1,12 @@
 import { addPlugin, createResolver, defineNuxtModule } from '@nuxt/kit'
 import defu from 'defu'
 import { name, version } from '../package.json'
-import type { ViewerjsOptions } from './types'
+import { assertSerializableOptions } from './options'
+import type { ViewerjsModuleOptions, ViewerjsOptions } from './types'
 
 export * from './types'
 
-export default defineNuxtModule<ViewerjsOptions>({
+export default defineNuxtModule<ViewerjsModuleOptions>({
   meta: {
     name,
     version,
@@ -26,10 +27,13 @@ export default defineNuxtModule<ViewerjsOptions>({
     nuxt.options.css ??= []
     nuxt.options.css.push('viewerjs/dist/viewer.css')
 
-    nuxt.options.runtimeConfig.public.viewerjs = defu(
+    const runtimeOptions = defu(
       nuxt.options.runtimeConfig.public.viewerjs,
       options,
     )
+
+    assertSerializableOptions(runtimeOptions)
+    nuxt.options.runtimeConfig.public.viewerjs = runtimeOptions
 
     addPlugin({
       name: 'viewerjs',
@@ -41,14 +45,22 @@ export default defineNuxtModule<ViewerjsOptions>({
 
 declare module '@nuxt/schema' {
   interface NuxtConfig {
-    viewerjs?: ViewerjsOptions
+    viewerjs?: ViewerjsModuleOptions
   }
 
   interface NuxtOptions {
-    viewerjs?: ViewerjsOptions
+    viewerjs?: ViewerjsModuleOptions
   }
 
   interface PublicRuntimeConfig {
-    viewerjs?: Required<ViewerjsOptions>
+    viewerjs?: ViewerjsModuleOptions
+  }
+
+  interface AppConfigInput {
+    viewerjs?: ViewerjsOptions
+  }
+
+  interface AppConfig {
+    viewerjs?: ViewerjsOptions
   }
 }

@@ -1,30 +1,38 @@
+import defu from 'defu'
 import Viewer from 'viewerjs'
-import { defineNuxtPlugin, useRouter, useRuntimeConfig } from '#app'
+import { defineNuxtPlugin, useAppConfig, useRuntimeConfig } from '#app'
+import type { ViewerjsOptions } from '../types'
 
 export default defineNuxtPlugin({
   name: 'viewerjs',
   setup(nuxtApp) {
-    const router = useRouter()
+    const appConfig = useAppConfig()
     const runtimeConfig = useRuntimeConfig()
     const viewerOptions = runtimeConfig.public.viewerjs
 
-    if (!import.meta.client || !viewerOptions) {
+    if (!viewerOptions) {
       return
     }
 
-    const { container, delay, ...restOptions } = viewerOptions
-
+    const runtimeOptions: ViewerjsOptions = viewerOptions
     let viewer: Viewer | undefined
+    let refreshTimeout: ReturnType<typeof setTimeout> | undefined
+
+    function resolveOptions() {
+      const applicationOptions: ViewerjsOptions = appConfig.viewerjs ?? {}
+
+      return defu(applicationOptions, runtimeOptions, {
+        container: '#__nuxt',
+        delay: 200,
+      })
+    }
 
     function refresh() {
-      if (viewer) {
-        viewer?.destroy()
-      }
+      refreshTimeout = undefined
+      viewer?.destroy()
+      viewer = undefined
 
-      if (!viewerOptions) {
-        return
-      }
-
+      const { container, delay: _delay, ...restOptions } = resolveOptions()
       const containerEl = document.querySelector<HTMLElement>(container)
 
       if (!containerEl) {
@@ -34,18 +42,19 @@ export default defineNuxtPlugin({
       viewer = new Viewer(containerEl, restOptions)
     }
 
-    nuxtApp.hook('app:mounted', async () => {
-      await waitFor(delay)
-      refresh()
-    })
+    function cancelRefresh() {
+      clearTimeout(refreshTimeout)
+      refreshTimeout = undefined
+    }
 
-    router.afterEach(async () => {
-      await waitFor(delay)
-      refresh()
-    })
+    function scheduleRefresh() {
+      cancelRefresh()
+      refreshTimeout = setTimeout(refresh, resolveOptions().delay)
+    }
+
+    nuxtApp.hook('app:mounted', scheduleRefresh)
+    nuxtApp.hook('page:start', cancelRefresh)
+    nuxtApp.hook('page:finish', scheduleRefresh)
+    nuxtApp.hook('page:transition:finish', scheduleRefresh)
   },
 })
-
-function waitFor(ms = 0) {
-  return new Promise(resolve => setTimeout(resolve, ms))
-}

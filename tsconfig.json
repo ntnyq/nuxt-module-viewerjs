@@ -1,18 +1,13 @@
 {
-  "references": [
-    {
-      "path": "./.nuxt/tsconfig.app.json"
-    },
-    {
-      "path": "./.nuxt/tsconfig.server.json"
-    },
-    {
-      "path": "./.nuxt/tsconfig.shared.json"
-    },
-    {
-      "path": "./.nuxt/tsconfig.node.json"
-    }
+  "extends": "./.nuxt/tsconfig.app.json",
+  "compilerOptions": {
+    "types": ["node"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "tests/**/*.ts",
+    "vitest.config.ts",
+    ".nuxt/nuxt.d.ts"
   ],
-  // https://nuxt.com/docs/guide/concepts/typescript
-  "files": []
+  "exclude": ["node_modules", "dist", "playground", "tests/fixtures"]
 }

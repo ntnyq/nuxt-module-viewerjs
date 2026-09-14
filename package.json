@@ -52,9 +52,12 @@
     "prepare": "husky",
     "prepublishOnly": "pnpm run build",
     "release": "run-s release:check release:version",
-    "release:check": "run-s lint typecheck",
+    "release:check": "run-s lint typecheck test",
     "release:version": "bumpp",
-    "typecheck": "tsc --noEmit"
+    "test": "vitest run",
+    "typecheck": "run-s typecheck:module typecheck:playground",
+    "typecheck:module": "tsc --noEmit",
+    "typecheck:playground": "vue-tsc --build playground/tsconfig.json"
   },
   "dependencies": {
     "@nuxt/kit": "^4.5.2",
@@ -69,12 +72,15 @@
     "@types/node": "^26.5.1",
     "bumpp": "^12.3.0",
     "eslint": "^10.10.0",
+    "happy-dom": "^20.14.5",
     "husky": "^9.1.7",
     "nano-staged": "^1.0.2",
     "npm-run-all2": "^9.0.3",
     "nuxt": "^4.5.2",
     "prettier": "^3.9.6",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.0",
+    "vue-tsc": "^3.3.11"
   },
   "nano-staged": {
     "*.{js,ts,mjs,cjs,vue,md,svg,yml,yaml,json}": "eslint --fix"

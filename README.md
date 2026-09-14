@@ -51,13 +51,36 @@ Container of all images.
 
 ### delay
 
-Delay time in millseconds.
+Delay in milliseconds after mounting, page rendering, or a page transition finishes.
 
 - **type**: `number`
 - **required**: `false`
 - **default**: `200`
 
 Check [Viewer.js - Options](https://github.com/fengyuanchen/viewerjs#options) for more options.
+
+### Callback options
+
+Options in `nuxt.config.ts` and `runtimeConfig.public.viewerjs` must be
+serializable. Functions such as `filter`, `title`, `url`, event handlers, and
+toolbar callbacks belong in `app/app.config.ts` (or `app.config.ts` in Nuxt 3):
+
+```ts
+export default defineAppConfig({
+  viewerjs: {
+    filter: image => image.classList.contains('zoomable'),
+    title: image => image.alt,
+    url: image => image.dataset.original || image.src,
+  },
+})
+```
+
+Application options override the defaults from runtime config and are read on
+each refresh. Callbacks in module or runtime configuration cause a build error
+with instructions to move them to app config.
+
+`ViewerjsOptions` describes application options, including callbacks.
+`ViewerjsModuleOptions` describes serializable module defaults.
 
 ## Credits
 
