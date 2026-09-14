@@ -2,7 +2,7 @@
   "name": "@nuxt-dev/viewerjs",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@10.34.5",
+  "packageManager": "pnpm@12.4.1",
   "description": "Viewer.js integrated for Nuxt",
   "keywords": [
     "Viewer.js",
@@ -51,23 +51,22 @@
     "play:dev": "nuxi dev playground",
     "prepare": "husky",
     "prepublishOnly": "pnpm run build",
-    "release": "run-s release:check release:version release:publish",
+    "release": "run-s release:check release:version",
     "release:check": "run-s lint typecheck",
-    "release:publish": "pnpm publish",
     "release:version": "bumpp",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@nuxt/kit": "^4.5.2",
     "defu": "^6.1.7",
-    "viewerjs": "^1.13.0"
+    "viewerjs": "^1.14.0"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^6.1.5",
+    "@ntnyq/eslint-config": "^7.0.0-beta.19",
     "@ntnyq/prettier-config": "^3.1.0",
     "@nuxt/module-builder": "^1.0.3",
     "@nuxt/schema": "^4.5.2",
-    "@types/node": "^24.13.3",
+    "@types/node": "^26.5.1",
     "bumpp": "^12.3.0",
     "eslint": "^10.10.0",
     "husky": "^9.1.7",
@@ -75,7 +74,7 @@
     "npm-run-all2": "^9.0.3",
     "nuxt": "^4.5.2",
     "prettier": "^3.9.6",
-    "typescript": "^5.8.3"
+    "typescript": "^6.0.3"
   },
   "nano-staged": {
     "*.{js,ts,mjs,cjs,vue,md,svg,yml,yaml,json}": "eslint --fix"
