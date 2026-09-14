@@ -44,14 +44,6 @@ export default defineNuxtModule<ViewerjsModuleOptions>({
 })
 
 declare module '@nuxt/schema' {
-  interface NuxtConfig {
-    viewerjs?: ViewerjsModuleOptions
-  }
-
-  interface NuxtOptions {
-    viewerjs?: ViewerjsModuleOptions
-  }
-
   interface PublicRuntimeConfig {
     viewerjs?: ViewerjsModuleOptions
   }
