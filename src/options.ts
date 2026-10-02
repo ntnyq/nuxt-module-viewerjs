@@ -4,7 +4,7 @@
 export function assertSerializableOptions(
   options: unknown,
   path = 'viewerjs',
-): void {
+) {
   if (typeof options === 'function') {
     throw new TypeError(
       `${path} cannot contain a function in runtime config. Move it to viewerjs in app.config.ts.`,
