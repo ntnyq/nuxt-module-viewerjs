@@ -192,7 +192,7 @@ importers:
         specifier: ^4.5.2
         version: 4.5.2
       '@types/node':
-        specifier: ^26.6.2
+        specifier: ^26.6.3
         version: 26.6.3
       bumpp:
         specifier: ^12.3.0
