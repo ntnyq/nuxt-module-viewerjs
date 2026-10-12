@@ -2,7 +2,7 @@
   "name": "@nuxt-dev/viewerjs",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@12.7.0",
+  "packageManager": "pnpm@12.9.1",
   "description": "Viewer.js integrated for Nuxt",
   "keywords": [
     "Viewer.js",
@@ -62,16 +62,16 @@
   "dependencies": {
     "@nuxt/kit": "^4.5.2",
     "defu": "^6.1.7",
-    "viewerjs": "^1.15.0"
+    "viewerjs": "^1.15.2"
   },
   "devDependencies": {
     "@ntnyq/eslint-config": "^7.0.0-beta.22",
     "@ntnyq/prettier-config": "^3.1.0",
     "@nuxt/module-builder": "^1.0.3",
     "@nuxt/schema": "^4.5.2",
-    "@types/node": "^26.6.3",
+    "@types/node": "^26.6.4",
     "bumpp": "^12.3.0",
-    "eslint": "^10.11.0",
+    "eslint": "^10.12.0",
     "happy-dom": "^20.14.5",
     "husky": "^9.1.7",
     "nano-staged": "^1.0.2",
@@ -79,8 +79,8 @@
     "nuxt": "^4.5.2",
     "prettier": "^3.9.9",
     "typescript": "^6.0.3",
-    "vitest": "^5.0.2",
-    "vue-tsc": "^3.3.11"
+    "vitest": "^5.0.3",
+    "vue-tsc": "^3.3.12"
   },
   "nano-staged": {
     "*.{js,ts,mjs,cjs,vue,md,svg,yml,yaml,json}": "eslint --fix"
