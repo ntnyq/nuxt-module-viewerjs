@@ -2,7 +2,7 @@
   "name": "@nuxt-dev/viewerjs",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@12.9.1",
+  "packageManager": "pnpm@12.14.0",
   "description": "Viewer.js integrated for Nuxt",
   "keywords": [
     "Viewer.js",
@@ -60,27 +60,27 @@
     "typecheck:playground": "vue-tsc --build playground/tsconfig.json"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.5.2",
+    "@nuxt/kit": "^4.6.2",
     "defu": "^6.1.7",
     "viewerjs": "^1.15.2"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^7.0.0-beta.22",
+    "@ntnyq/eslint-config": "^7.0.0-beta.25",
     "@ntnyq/prettier-config": "^3.1.0",
     "@nuxt/module-builder": "^1.0.3",
-    "@nuxt/schema": "^4.5.2",
-    "@types/node": "^26.6.4",
+    "@nuxt/schema": "^4.6.2",
+    "@types/node": "^26.6.5",
     "bumpp": "^12.3.0",
-    "eslint": "^10.12.0",
-    "happy-dom": "^21.0.1",
+    "eslint": "^10.13.0",
+    "happy-dom": "^21.0.3",
     "husky": "^9.1.7",
     "nano-staged": "^1.0.2",
     "npm-run-all2": "^9.0.3",
-    "nuxt": "^4.5.2",
-    "prettier": "^3.9.9",
+    "nuxt": "^4.6.2",
+    "prettier": "^3.9.10",
     "typescript": "^6.0.3",
-    "vitest": "^5.0.3",
-    "vue-tsc": "^3.3.12"
+    "vitest": "^5.0.5",
+    "vue-tsc": "^3.3.13"
   },
   "nano-staged": {
     "*.{js,ts,mjs,cjs,vue,md,svg,yml,yaml,json}": "eslint --fix"
